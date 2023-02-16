@@ -1,0 +1,7 @@
+docker run ubuntu: 17.10
+docker run -d ubuntu sleep 15
+docker attach <containerID>
+docker run timer
+
+docker run -p 8080:8080 -v /root/my-jenkins-data:/var/jenkins_home jenkins/jenkisn
+docker run -p 38282:8080 kodekloud/simple-webapp:blue

@@ -1,0 +1,57 @@
+docker run -d -p 80:80 docker/getting-started
+docker image is a file or a template with set of instructions so when 
+it is ran the container a run time engine is spun up, according to the 
+description defined in the docker image
+
+Write a docker file to build a docker image (usually an app),
+docker run to run that image and create a run time container which runs on the local machine.
+=====
+docker run fedora echo hello world
+docker run -d -p 80:80 docker/getting-started
+
+=================DOcker COmmands====================
+docker run command is to runa  container using an image
+
+docker run ubuntu sleep 5
+docker run nginx
+--------------------------------
+
+docker ps - list containers running
+docker stop <container ID> or container name
+docker ps -a (list all containers)
+---------------------------------
+
+docker rm <container name>
+
+docker images- list images
+
+docker rmi <image name> , ensure no containers running of that image
+---------------------------------------------------------
+containers only run if the process inside it is alive and running, like for example 
+docker run ubuntu will exit immediatly as it is an OS and not an actual lprocess to perform a specific task
+-------------
+
+docker exec -- issue command to get inside a running container
+
+------------------------------
+docker detach
+
+run docker container with -d ---- runs container in background mode
+doker run -d kodekloud/simple-webapp
+
+
+docker attach <first few chars of container ID
+
+------------------------------------------------------------
+
+docker run -it centos bash
+
+docker ps  - list only running containers
+docker ps -a ---- list of all containers executed even the ones not running
+
+docker run -d centos sleep 20 -- runs in the background
+docker exec <containerID> cat/etc/*release* 
+container running ubuntu
+docker run -d --name webpp nginx:1.14-alpine
+
+this will run a container in detached mode and also name it
