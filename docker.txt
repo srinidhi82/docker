@@ -54,4 +54,12 @@ docker exec <containerID> cat/etc/*release*
 container running ubuntu
 docker run -d --name webpp nginx:1.14-alpine
 
+===============docker Netwrok creat======
+docker network create -d bridge wp-mysql-network --gateway=182.18.0.1 --subnet=182.18.0.1/24
+
 this will run a container in detached mode and also name it
+
+containers are not meant to host an OS unlike VM's so if u run docker run ubunto it just exits and 
+no container wil be running ,containers are used to run specific process , databses or apps 
+computationor analysis
+if processes are running containers are alive

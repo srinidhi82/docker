@@ -5,3 +5,26 @@ docker run timer
 
 docker run -p 8080:8080 -v /root/my-jenkins-data:/var/jenkins_home jenkins/jenkisn
 docker run -p 38282:8080 kodekloud/simple-webapp:blue
+docker run -e APP_COLOR=blue -p 38282:8080 --name blue-app kodekloud/simple-webapp
+docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 -d mysql
+
+=============================================
+Docker compose
+docker run -- links command line option to link 2 running containers
+
+docker run --name redis redis:alpine
+docker run --name clickcounter -p 8085:5000 --link redis kodekloud/click-counter
+docker run -d --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 -v /opt/data:/var/lib/mysql mysql
+docker run --name alpine-2 --network none alpine
+docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 --network=wp-mysql-network mysql:5.6
+docker run -d -p 5000:5000 --restart=always --name my-registry registry:2
+
+Netwroks used in docker
+container assigned go bridge network by efault
+
+Bridge,None and HOST are netwroks docker support
+
+docker has built in dns server which helps container to resolve by container name
+
+docker image tag nginx:latest localhost:5000/nginx:latest
+$ docker push localhost:5000/nginx:latest
